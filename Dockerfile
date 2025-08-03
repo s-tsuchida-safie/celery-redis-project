@@ -9,6 +9,4 @@ COPY uv.lock .
 
 RUN uv pip install --system .
 
-COPY . .
-
 CMD ["celery", "-A", "celery_app", "worker", "--loglevel=info", "--concurrency=4"]
